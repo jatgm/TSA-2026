@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bijfkcqh8syrs"]
+[gd_scene load_steps=8 format=3 uid="uid://bijfkcqh8syrs"]
 
 [ext_resource type="Script" uid="uid://bnu78vpap1dx7" path="res://Scenes/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://dkk1y03nn3nmp" path="res://Assets/platformer_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(12.5, 13)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cvnsp"]
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "idle right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
+_data = {
+&"RESET": SubResource("Animation_vgqql"),
+&"idle right": SubResource("Animation_6t5aa")
+}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_v0iea")
@@ -17,4 +55,14 @@ shape = SubResource("RectangleShape2D_cvnsp")
 texture = ExtResource("2_cvnsp")
 hframes = 8
 vframes = 15
-frame = 12
+frame = 70
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+tree_root = SubResource("AnimationNodeStateMachine_cvnsp")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+libraries = {
+&"": SubResource("AnimationLibrary_fkybt")
+}
