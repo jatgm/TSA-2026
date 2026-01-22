@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bus4le3a0wl6"]
+
+[ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_hi7j2"]
+[ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="1_lvfns"]
+[ext_resource type="Texture2D" uid="uid://djdeb27n2mywv" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="2_sojq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvfns"]
+size = Vector2(1134.5, 170.5)
+
+[node name="Level one" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 88)
+zoom = Vector2(5, 5)
+script = ExtResource("1_hi7j2")
+
+[node name="Player" parent="." instance=ExtResource("1_lvfns")]
+position = Vector2(105, 89)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-11, -171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 353)
+shape = SubResource("RectangleShape2D_lvfns")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(121, 81)
+texture = ExtResource("2_sojq8")
+
+[node name="Background2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(361, 81)
+texture = ExtResource("2_sojq8")
