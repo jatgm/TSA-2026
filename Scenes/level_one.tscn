@@ -1,23 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://bus4le3a0wl6"]
+[gd_scene load_steps=11 format=3 uid="uid://bus4le3a0wl6"]
 
 [ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_hi7j2"]
 [ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="1_lvfns"]
 [ext_resource type="Texture2D" uid="uid://budt0iljnru7r" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_0.png" id="4_b7vm3"]
+[ext_resource type="Script" uid="uid://bv8eycptpke32" path="res://Scenes/backgrounds.gd" id="4_gni6d"]
 [ext_resource type="FontFile" uid="uid://bbsvfam6iavq6" path="res://Assets/Super Mario Bros. NES.ttf" id="4_ik1yt"]
+[ext_resource type="Texture2D" uid="uid://dhfw1li3o0ob5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_1.png" id="5_b7vm3"]
+[ext_resource type="Texture2D" uid="uid://q1icn16vkwul" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="7_3lrk7"]
+[ext_resource type="Shader" uid="uid://buvttkp7q2r4k" path="res://Scenes/level_one.gdshader" id="8_y3aq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvfns"]
 size = Vector2(1134.5, 170.5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys0qe"]
+shader = ExtResource("8_y3aq0")
+shader_parameter/scanline_count = 50.0
+shader_parameter/scanline_opacity = 0.10000000475
+shader_parameter/warp_amount = 0.2
+shader_parameter/clip_warp = true
+shader_parameter/vignette_intensity = 0.50000002375
+shader_parameter/brightness_boost = 0.10000000475
+shader_parameter/noise_amount = 0.050000002375
+
 [node name="Level one" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 90)
-zoom = Vector2(6, 6)
+position = Vector2(0, 38)
+zoom = Vector2(4, 4)
 script = ExtResource("1_hi7j2")
 
 [node name="Player" parent="." instance=ExtResource("1_lvfns")]
 physics_interpolation_mode = 1
-position = Vector2(105, 89)
+position = Vector2(1, 91)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-11, -171)
@@ -27,7 +41,6 @@ position = Vector2(578, 353)
 shape = SubResource("RectangleShape2D_lvfns")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 offset_right = 752.0
@@ -45,10 +58,50 @@ theme_override_fonts/normal_font = ExtResource("4_ik1yt")
 theme_override_font_sizes/normal_font_size = 50
 text = "100"
 
+[node name="Backgrounds" type="Node2D" parent="."]
+position = Vector2(0, 22)
+script = ExtResource("4_gni6d")
+
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(240, 0)
 repeat_size = Vector2(240, 0)
+repeat_times = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(120, 81)
+z_index = -1
+position = Vector2(0, 22)
 texture = ExtResource("4_b7vm3")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 1)
+scroll_offset = Vector2(0, 17)
+repeat_size = Vector2(240, 0)
+repeat_times = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -1
+position = Vector2(0, 22)
+texture = ExtResource("5_b7vm3")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+scroll_offset = Vector2(0, 17)
+repeat_size = Vector2(240, 0)
+repeat_times = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -1
+position = Vector2(0, 22)
+texture = ExtResource("7_3lrk7")
+
+[node name="Post Processing" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Post Processing"]
+material = SubResource("ShaderMaterial_ys0qe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
