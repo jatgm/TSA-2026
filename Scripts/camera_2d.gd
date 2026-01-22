@@ -3,4 +3,4 @@ extends Camera2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $"../Player".position.x > position.x:
-		position.x = $"../Player".position.x
+		position.x = round($"../Player".position.x)
