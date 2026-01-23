@@ -2,7 +2,6 @@ extends Area2D
 
 var is_activated = false
 
-const PLAYER_SHEET = preload("res://Assets/platformer_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png")
 
 func _ready() -> void:
 	# Connect the collision signal via code (Best practice)
