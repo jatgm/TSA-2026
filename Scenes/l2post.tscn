@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://djrp8edmhj8qv"]
+
+[ext_resource type="Shader" uid="uid://vmoi5oqt5xmx" path="res://Scenes/level_two.gdshader" id="1_g7hey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e86fb"]
+shader = ExtResource("1_g7hey")
+shader_parameter/vibrance = 1.4
+shader_parameter/brightness = 1.05
+shader_parameter/hue_shift = 0.05
+
+[node name="Post Processing" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_e86fb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=4 uid="uid://bus4le3a0wl6"]
+[gd_scene load_steps=20 format=4 uid="uid://bus4le3a0wl6"]
 
+[ext_resource type="Script" uid="uid://d0r5mn7i70mbn" path="res://Scenes/level_one.gd" id="1_el6qx"]
 [ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_hi7j2"]
 [ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="1_lvfns"]
 [ext_resource type="Texture2D" uid="uid://budt0iljnru7r" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_0.png" id="4_b7vm3"]
@@ -99,6 +100,7 @@ shader_parameter/noise_amount = 0.050000002375
 size = Vector2(45, 64)
 
 [node name="Level one" type="Node2D"]
+script = ExtResource("1_el6qx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 52)
@@ -334,3 +336,4 @@ shape = SubResource("RectangleShape2D_62atx")
 [connection signal="start_game" from="HUD/Intro Sequence" to="HUD/Time/RichTextLabel2" method="_on_intro_sequence_start_game"]
 [connection signal="timeout" from="HUD/Timer" to="HUD/Time/RichTextLabel2" method="_on_timer_timeout"]
 [connection signal="timeout" from="HUD/Timer" to="HUD/Intro Sequence" method="_on_timer_timeout"]
+[connection signal="switch" from="Lever" to="." method="_on_lever_switch"]

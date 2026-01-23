@@ -1,7 +1,7 @@
 extends Area2D
 
 var is_activated = false
-
+signal switch
 
 func _ready() -> void:
 	# Connect the collision signal via code (Best practice)
@@ -28,8 +28,9 @@ func switch_to_level_two():
 	await get_tree().create_timer(3.0).timeout
 	
 	# 4. Switch the scene
-	var scene_path = "res://Scenes/level_two.tscn"
-	get_tree().change_scene_to_file(scene_path)
+	switch.emit()
+	
+	
 
 func pull_lever() -> void:
 	is_activated = true

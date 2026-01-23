@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsjqnjoxgant5"]
+
+[ext_resource type="FontFile" uid="uid://bj35w4bgcptl2" path="res://Assets/SuperMario256.ttf" id="1_66sek"]
+[ext_resource type="Texture2D" uid="uid://cgt7bam7hwvkb" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/hearts_hud.png" id="2_v55hj"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -204.0
+offset_right = -90.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_66sek")
+theme_override_font_sizes/normal_font_size = 70
+text = "1-2"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -632.0
+offset_right = 112.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("2_v55hj")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -632.0
+offset_right = 208.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("2_v55hj")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = -632.0
+offset_right = 304.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("2_v55hj")
