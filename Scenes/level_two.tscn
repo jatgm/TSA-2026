@@ -1,24 +1,23 @@
-[gd_scene load_steps=19 format=4 uid="uid://bus4le3a0wl6"]
+[gd_scene load_steps=18 format=4 uid="uid://dwx53v5fp665h"]
 
-[ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_hi7j2"]
-[ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="1_lvfns"]
-[ext_resource type="Texture2D" uid="uid://budt0iljnru7r" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_0.png" id="4_b7vm3"]
-[ext_resource type="Script" uid="uid://bv8eycptpke32" path="res://Scenes/backgrounds.gd" id="4_gni6d"]
-[ext_resource type="FontFile" uid="uid://bbsvfam6iavq6" path="res://Assets/Super Mario Bros. NES.ttf" id="4_ik1yt"]
-[ext_resource type="Script" uid="uid://bqjffv7aui4b5" path="res://Scenes/rich_text_label_2.gd" id="4_ys0qe"]
-[ext_resource type="Texture2D" uid="uid://dhfw1li3o0ob5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_1.png" id="5_b7vm3"]
-[ext_resource type="Script" uid="uid://btjdbyqw2fo46" path="res://Scenes/intro_sequence.gd" id="5_tgw3l"]
-[ext_resource type="Texture2D" uid="uid://q1icn16vkwul" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="7_3lrk7"]
-[ext_resource type="Shader" uid="uid://buvttkp7q2r4k" path="res://Scenes/level_one.gdshader" id="8_y3aq0"]
-[ext_resource type="Texture2D" uid="uid://p7l748k412pf" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/tileset.png" id="10_ep8vc"]
-[ext_resource type="Script" uid="uid://bhtjb28cdyykc" path="res://Scenes/area_2d.gd" id="12_el6qx"]
-[ext_resource type="Texture2D" uid="uid://c11qq7wopgbti" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/lever_turned_right.png" id="13_el6qx"]
+[ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_h606a"]
+[ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="2_xkql2"]
+[ext_resource type="FontFile" uid="uid://bj35w4bgcptl2" path="res://Assets/SuperMario256.ttf" id="3_ahq5a"]
+[ext_resource type="Texture2D" uid="uid://cgt7bam7hwvkb" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/hearts_hud.png" id="5_h606a"]
+[ext_resource type="Script" uid="uid://bv8eycptpke32" path="res://Scenes/backgrounds.gd" id="6_8ccln"]
+[ext_resource type="Texture2D" uid="uid://budt0iljnru7r" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_0.png" id="7_5iwem"]
+[ext_resource type="Texture2D" uid="uid://dhfw1li3o0ob5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_1.png" id="8_50et7"]
+[ext_resource type="Texture2D" uid="uid://q1icn16vkwul" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="9_r4f0q"]
+[ext_resource type="Texture2D" uid="uid://p7l748k412pf" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/tileset.png" id="10_6srrj"]
+[ext_resource type="Shader" uid="uid://vmoi5oqt5xmx" path="res://Scenes/level_two.gdshader" id="11_yetpc"]
+[ext_resource type="Script" uid="uid://bhtjb28cdyykc" path="res://Scenes/area_2d.gd" id="12_k3k02"]
+[ext_resource type="Texture2D" uid="uid://c11qq7wopgbti" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/lever_turned_right.png" id="13_x0b32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvfns"]
 size = Vector2(2430.25, 30.25)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgw3l"]
-texture = ExtResource("10_ep8vc")
+texture = ExtResource("10_6srrj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -84,16 +83,11 @@ texture = ExtResource("10_ep8vc")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_tgw3l")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys0qe"]
-shader = ExtResource("8_y3aq0")
-shader_parameter/warp_amount = 0.2
-shader_parameter/saturation = 1.4
-shader_parameter/aberration = 0.0
-shader_parameter/scanline_opacity = 0.10000000475
-shader_parameter/scanline_count = 50.0
-shader_parameter/vignette_intensity = 0.50000002375
-shader_parameter/brightness_boost = 0.10000000475
-shader_parameter/noise_amount = 0.050000002375
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e86fb"]
+shader = ExtResource("11_yetpc")
+shader_parameter/vibrance = 1.4
+shader_parameter/brightness = 1.05
+shader_parameter/hue_shift = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62atx"]
 size = Vector2(45, 64)
@@ -103,9 +97,9 @@ size = Vector2(45, 64)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 52)
 zoom = Vector2(5, 5)
-script = ExtResource("1_hi7j2")
+script = ExtResource("1_h606a")
 
-[node name="Player" parent="." instance=ExtResource("1_lvfns")]
+[node name="Player" parent="." instance=ExtResource("2_xkql2")]
 physics_interpolation_mode = 1
 position = Vector2(70, 91)
 
@@ -118,181 +112,92 @@ shape = SubResource("RectangleShape2D_lvfns")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Score" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Score"]
-layout_mode = 0
-offset_right = 752.0
-offset_bottom = 439.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "SCORE"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="HUD/Score"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 52.0
-offset_right = 802.0
-offset_bottom = 491.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "100"
-
-[node name="Time" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -272.0
-offset_right = -232.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Time"]
-layout_mode = 0
-offset_right = 752.0
-offset_bottom = 439.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "TIME"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="HUD/Time"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 52.0
-offset_right = 778.0
-offset_bottom = 491.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "999
-"
-script = ExtResource("4_ys0qe")
-
-[node name="World" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -4.0
-offset_right = 36.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/World"]
-layout_mode = 0
-offset_right = 752.0
-offset_bottom = 439.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "WORLD"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="HUD/World"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 52.0
-offset_right = 799.0
-offset_bottom = 491.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "1-1
-"
-
-[node name="World2" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -244.0
-offset_right = -204.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/World2"]
-layout_mode = 0
-offset_right = 752.0
-offset_bottom = 439.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "COINS"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="HUD/World2"]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 52.0
-offset_right = 805.0
-offset_bottom = 491.0
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "000"
-
-[node name="Intro Sequence" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_tgw3l")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Intro Sequence"]
-layout_mode = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 145.0
-offset_top = 185.0
-offset_right = 949.0
-offset_bottom = 419.0
+offset_left = -544.0
+offset_top = -204.0
+offset_right = -90.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("4_ik1yt")
-theme_override_font_sizes/normal_font_size = 50
-text = "fractured frames
-INSERT COIN [E]
-WASD TO MOVE
-SPACE TO JUMP"
+theme_override_fonts/normal_font = ExtResource("3_ahq5a")
+theme_override_font_sizes/normal_font_size = 70
+text = "1-2"
 
 [node name="Timer" type="Timer" parent="HUD"]
 autostart = true
 
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -632.0
+offset_right = 112.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("5_h606a")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -632.0
+offset_right = 208.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("5_h606a")
+
+[node name="TextureRect3" type="TextureRect" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = -632.0
+offset_right = 304.0
+offset_bottom = -544.0
+grow_vertical = 0
+texture = ExtResource("5_h606a")
+
 [node name="Backgrounds" type="Node2D" parent="."]
 position = Vector2(0, 22)
-script = ExtResource("4_gni6d")
+script = ExtResource("6_8ccln")
 
-[node name="dirt" type="Parallax2D" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(240, 0)
 repeat_times = 100
 
-[node name="Sprite2D" type="Sprite2D" parent="dirt"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 position = Vector2(0, 22)
-texture = ExtResource("4_b7vm3")
+texture = ExtResource("7_5iwem")
 
-[node name="foreground" type="Parallax2D" parent="."]
+[node name="Parallax2D2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.9, 1)
 scroll_offset = Vector2(0, 45)
 repeat_size = Vector2(240, 0)
 repeat_times = 100
 
-[node name="Sprite2D" type="Sprite2D" parent="foreground"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
 z_index = -1
 position = Vector2(0, 22)
-texture = ExtResource("5_b7vm3")
+texture = ExtResource("8_50et7")
 
-[node name="backround" type="Parallax2D" parent="."]
+[node name="Parallax2D3" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.8, 1)
 scroll_offset = Vector2(0, 45)
 repeat_size = Vector2(240, 0)
 repeat_times = 100
 
-[node name="Sprite2D" type="Sprite2D" parent="backround"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
 z_index = -1
 position = Vector2(0, 22)
-texture = ExtResource("7_3lrk7")
+texture = ExtResource("9_r4f0q")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAEAAYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAALAAYAAQABAAAAAAAMAAYAAQABAAAAAAANAAYAAQABAAAAAAAOAAYAAQABAAAAAAAPAAYAAQABAAAAAAAQAAYAAQABAAAAAAARAAYAAQABAAAAAAASAAYAAQABAAAAAAATAAYAAQABAAAAAAAUAAYAAQABAAAAAAAVAAYAAQABAAAAAAAWAAYAAQABAAAAAAAXAAYAAQABAAAAAAAYAAYAAQABAAAAAAAZAAYAAQABAAAAAAAaAAYAAQABAAAAAAAbAAYAAQABAAAAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAAGAAcAAQABAAEAAAAHAAcAAQABAAEAAAAIAAcAAQABAAEAAAAJAAcAAQABAAEAAAAKAAcAAQABAAEAAAALAAcAAQABAAEAAAAMAAcAAQABAAEAAAANAAcAAQABAAEAAAAOAAcAAQABAAEAAAAPAAcAAQABAAEAAAAQAAcAAQABAAEAAAARAAcAAQABAAEAAAASAAcAAQABAAEAAAATAAcAAQABAAEAAAAUAAcAAQABAAEAAAAVAAcAAQABAAEAAAAWAAcAAQABAAEAAAAXAAcAAQABAAEAAAAYAAcAAQABAAEAAAAZAAcAAQABAAEAAAAaAAcAAQABAAEAAAAbAAcAAQABAAEAAAAcAAcAAQABAAEAAAD//wYAAQAAAAAAAAD//wcAAQAAAAEAAAAcAAYAAQABAAAAAAAdAAYAAQABAAAAAAAeAAYAAQABAAAAAAAfAAYAAQABAAAAAAAgAAYAAQABAAAAAAAhAAYAAQABAAAAAAAiAAYAAQABAAAAAAAjAAYAAQABAAAAAAAkAAYAAQABAAAAAAAlAAYAAQABAAAAAAAmAAYAAQABAAAAAAAnAAYAAQABAAAAAAAoAAYAAQABAAAAAAApAAYAAQABAAAAAAAqAAYAAQABAAAAAAArAAYAAQABAAAAAAAsAAYAAQABAAAAAAAtAAYAAQABAAAAAAAuAAYAAQABAAAAAAAvAAYAAQABAAAAAAAwAAYAAQABAAAAAAAxAAYAAQABAAAAAAAyAAYAAQABAAAAAAAzAAYAAQABAAAAAAA0AAYAAQABAAAAAAA1AAYAAQABAAAAAAA2AAYAAQABAAAAAAA3AAYAAQABAAAAAAA4AAYAAQABAAAAAAA5AAYAAQABAAAAAAA6AAYAAQABAAAAAAA7AAYAAQABAAAAAAA8AAYAAQABAAAAAAA9AAYAAQABAAAAAAA+AAYAAQABAAAAAAA/AAYAAQABAAAAAABAAAYAAQABAAAAAABBAAYAAQABAAAAAABCAAYAAQABAAAAAABDAAYAAQABAAAAAABEAAYAAQABAAAAAABFAAYAAQABAAAAAABGAAYAAQABAAAAAABHAAYAAQABAAAAAABIAAYAAQABAAAAAABJAAYAAQABAAAAAABKAAYAAQABAAAAAABLAAYAAQABAAAAAABMAAYAAQABAAAAAABNAAYAAQABAAAAAABOAAYAAQABAAAAAABPAAYAAQABAAAAAABQAAYAAQABAAAAAABRAAYAAQABAAAAAABSAAYAAQABAAAAAABTAAYAAQABAAAAAABUAAYAAQABAAAAAABVAAYAAQABAAAAAABWAAYAAQABAAAAAABXAAYAAQABAAAAAABYAAYAAQABAAAAAABZAAYAAQABAAAAAABaAAYAAQABAAAAAABbAAYAAQABAAAAAABcAAYAAQABAAAAAABdAAYAAQABAAAAAABeAAYAAQABAAAAAABfAAYAAQABAAAAAABgAAYAAQABAAAAAABhAAYAAQABAAAAAABiAAYAAQABAAAAAABjAAYAAQABAAAAAABkAAYAAQABAAAAAABlAAYAAQABAAAAAABmAAYAAQABAAAAAABnAAYAAQABAAAAAABoAAYAAQABAAAAAABpAAYAAQABAAAAAABqAAUAAQABAAAAAABrAAUAAQABAAAAAABsAAUAAQABAAAAAABtAAUAAQABAAAAAABuAAUAAQABAAAAAABvAAUAAQABAAAAAABwAAUAAQABAAAAAABxAAUAAQABAAAAAAByAAUAAQABAAAAAABzAAUAAQABAAAAAAB0AAUAAQABAAAAAAB1AAUAAQABAAAAAAB2AAUAAQABAAAAAAB3AAUAAQABAAAAAAB4AAUAAQABAAAAAAB5AAUAAQABAAAAAAB6AAUAAQABAAAAAAB7AAUAAQABAAAAAAB8AAUAAQABAAAAAAB9AAUAAQABAAAAAAB+AAUAAQABAAAAAAB/AAUAAQABAAAAAACAAAUAAQABAAAAAACBAAUAAQABAAAAAACCAAUAAQABAAAAAACDAAUAAQABAAAAAACEAAUAAQABAAAAAACFAAUAAQABAAAAAACGAAUAAQABAAAAAACHAAUAAQABAAAAAACIAAUAAQABAAAAAACJAAUAAQABAAAAAACKAAUAAQABAAAAAACLAAUAAQABAAAAAACMAAUAAQABAAAAAACNAAUAAQABAAAAAACOAAUAAQABAAAAAACPAAUAAQABAAAAAACQAAUAAQABAAAAAACRAAUAAQABAAAAAACSAAUAAQABAAAAAACTAAUAAQABAAAAAACUAAUAAQABAAAAAACVAAUAAQABAAAAAACWAAUAAQABAAAAAACXAAUAAQABAAAAAACYAAUAAQABAAAAAACZAAUAAQABAAAAAAAdAAcAAQABAAEAAAAeAAcAAQABAAEAAAAfAAcAAQABAAEAAAAgAAcAAQABAAEAAAAhAAcAAQABAAEAAAAiAAcAAQABAAEAAAAjAAcAAQABAAEAAAAkAAcAAQABAAEAAAAlAAcAAQABAAEAAAAmAAcAAQABAAEAAAAnAAcAAQABAAEAAAAoAAcAAQABAAEAAAApAAcAAQABAAEAAAAqAAcAAQABAAEAAAArAAcAAQABAAEAAAAsAAcAAQABAAEAAAAtAAcAAQABAAEAAAAuAAcAAQABAAEAAAAvAAcAAQABAAEAAAAwAAcAAQABAAEAAAAxAAcAAQABAAEAAAAyAAcAAQABAAEAAAAzAAcAAQABAAEAAAA0AAcAAQABAAEAAAA1AAcAAQABAAEAAAA2AAcAAQABAAEAAAA3AAcAAQABAAEAAAA4AAcAAQABAAEAAAA5AAcAAQABAAEAAAA6AAcAAQABAAEAAAA7AAcAAQABAAEAAAA8AAcAAQABAAEAAAA9AAcAAQABAAEAAAA+AAcAAQABAAEAAAA/AAcAAQABAAEAAABAAAcAAQABAAEAAABBAAcAAQABAAEAAABCAAcAAQABAAEAAABDAAcAAQABAAEAAABEAAcAAQABAAEAAABFAAcAAQABAAEAAABGAAcAAQABAAEAAABHAAcAAQABAAEAAABIAAcAAQABAAEAAABJAAcAAQABAAEAAABKAAcAAQABAAEAAABLAAcAAQABAAEAAABMAAcAAQABAAEAAABNAAcAAQABAAEAAABOAAcAAQABAAEAAABPAAcAAQABAAEAAABQAAcAAQABAAEAAABRAAcAAQABAAEAAABSAAcAAQABAAEAAABTAAcAAQABAAEAAABUAAcAAQABAAEAAABVAAcAAQABAAEAAABWAAcAAQABAAEAAABXAAcAAQABAAEAAABYAAcAAQABAAEAAABZAAcAAQABAAEAAABaAAcAAQABAAEAAABbAAcAAQABAAEAAABcAAcAAQABAAEAAABdAAcAAQABAAEAAABeAAcAAQABAAEAAABfAAcAAQABAAEAAABgAAcAAQABAAEAAABhAAcAAQABAAEAAABiAAcAAQABAAEAAABjAAcAAQABAAEAAABkAAcAAQABAAEAAABlAAcAAQABAAEAAABmAAcAAQABAAEAAABnAAcAAQABAAEAAABoAAcAAQABAAEAAABpAAcAAQABAAEAAAALAAMAAQAHAAAAAAAMAAMAAQAHAAAAAAAKAAMAAQAGAAAAAAANAAMAAQAIAAAAAAAWAAMAAQAHAAAAAAAXAAMAAQAHAAAAAAAYAAMAAQAHAAAAAAAZAAMAAQAHAAAAAAAVAAMAAQAGAAAAAAAaAAMAAQAIAAAAAAA=")
@@ -301,31 +206,21 @@ tile_set = SubResource("TileSet_yb7v2")
 [node name="Post Processing" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Post Processing"]
-material = SubResource("ShaderMaterial_ys0qe")
+material = SubResource("ShaderMaterial_e86fb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="Lever" type="Area2D" parent="."]
 position = Vector2(555, 88)
-script = ExtResource("12_el6qx")
+script = ExtResource("12_k3k02")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lever"]
-texture = ExtResource("13_el6qx")
+texture = ExtResource("13_x0b32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lever"]
 position = Vector2(14.5, 1)
 shape = SubResource("RectangleShape2D_62atx")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lever"]
-position = Vector2(14.5, 1)
-shape = SubResource("RectangleShape2D_62atx")
-
-[connection signal="start_game" from="HUD/Intro Sequence" to="HUD/Time/RichTextLabel2" method="_on_intro_sequence_start_game"]
-[connection signal="timeout" from="HUD/Timer" to="HUD/Time/RichTextLabel2" method="_on_timer_timeout"]
-[connection signal="timeout" from="HUD/Timer" to="HUD/Intro Sequence" method="_on_timer_timeout"]
