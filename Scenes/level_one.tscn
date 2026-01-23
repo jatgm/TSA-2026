@@ -311,6 +311,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="ColorRect2" type="ColorRect" parent="Post Processing"]
+offset_right = 1.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
 [node name="Lever" type="Area2D" parent="."]
 position = Vector2(555, 88)
 script = ExtResource("12_el6qx")

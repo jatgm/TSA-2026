@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://dwx53v5fp665h"]
+[gd_scene load_steps=19 format=4 uid="uid://dwx53v5fp665h"]
 
 [ext_resource type="Script" uid="uid://bqyanq24iunnd" path="res://Scripts/camera_2d.gd" id="1_h606a"]
+[ext_resource type="Script" uid="uid://c77e5ucg04xno" path="res://Scenes/level_two.gd" id="1_xkql2"]
 [ext_resource type="PackedScene" uid="uid://bijfkcqh8syrs" path="res://Scenes/player.tscn" id="2_xkql2"]
 [ext_resource type="FontFile" uid="uid://bj35w4bgcptl2" path="res://Assets/SuperMario256.ttf" id="3_ahq5a"]
 [ext_resource type="Texture2D" uid="uid://cgt7bam7hwvkb" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/hearts_hud.png" id="5_h606a"]
@@ -92,7 +93,8 @@ shader_parameter/hue_shift = 0.05
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62atx"]
 size = Vector2(45, 64)
 
-[node name="Level one" type="Node2D"]
+[node name="Level two" type="Node2D"]
+script = ExtResource("1_xkql2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 52)
@@ -100,7 +102,7 @@ zoom = Vector2(5, 5)
 script = ExtResource("1_h606a")
 
 [node name="Player" parent="." instance=ExtResource("2_xkql2")]
-physics_interpolation_mode = 1
+z_index = 2
 position = Vector2(70, 91)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

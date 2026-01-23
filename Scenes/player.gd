@@ -7,6 +7,8 @@ const ACCELERATION = 800.0
 const FRICTION = 1000.0
 
 func _physics_process(delta: float) -> void:
+	print(global_position)
+	print(visible)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
